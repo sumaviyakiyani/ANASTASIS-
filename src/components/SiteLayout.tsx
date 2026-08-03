@@ -1,11 +1,11 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { Menu, X, Mail, Phone, MapPin, Linkedin, Twitter, Github, Facebook } from "lucide-react";
-import logo from "@/assets/anastasis-logo-mark.png.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
+  { to: "/premium", label: "Premium" },
   { to: "/blog", label: "Insights" },
   { to: "/portfolio", label: "Portfolio" },
   { to: "/about", label: "About" },
@@ -29,7 +29,9 @@ function Navbar() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass-dark shadow-elegant" : "bg-transparent"
+        scrolled
+          ? "glass-dark shadow-elegant"
+          : "bg-white/85 backdrop-blur-xl shadow-sm"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
@@ -37,7 +39,7 @@ function Navbar() {
           <img
             src="/LOGO.png"
             alt="Anastasis Technologies"
-            className="h-9 w-auto object-contain sm:h-10 md:h-11 lg:h-12"
+            className="h-12 w-auto"
           />
         </Link>
 
@@ -60,7 +62,10 @@ function Navbar() {
           })}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-5">
+          <Link to="/login" className="text-sm font-medium text-ink/80 transition hover:text-brand">
+            Sign in
+          </Link>
           <Link
             to="/contact"
             className="rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition-transform hover:scale-105"
@@ -110,7 +115,11 @@ function Footer() {
       <div className="absolute inset-0 bg-gradient-radial opacity-40 pointer-events-none" />
       <div className="relative mx-auto max-w-7xl px-6 py-16 grid gap-10 md:grid-cols-4">
         <div>
-          <img src={logo.url} alt="Anastasis" className="h-12 w-auto" />
+          <img
+            src="/LOGO.png"
+            alt="Anastasis"
+            className="h-14 w-auto max-w-[220px]"
+          />
           <p className="mt-4 text-sm text-ink/60 leading-relaxed">
             Research · Innovation · Recursion · Revival · Impact. Building tomorrow's software today.
           </p>

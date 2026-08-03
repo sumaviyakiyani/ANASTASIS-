@@ -14,7 +14,6 @@ import {
   Users,
 } from "lucide-react";
 import { SiteLayout, Section } from "@/components/SiteLayout";
-import logo from "@/assets/anastasis-logo-mark.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -78,17 +77,17 @@ function HomePage() {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center bg-gradient-dark text-ink overflow-hidden pt-24">
-        <div className="absolute inset-0 bg-gradient-radial opacity-70" />
-        <div className="absolute top-20 -left-20 h-96 w-96 rounded-full bg-brand/30 blur-3xl animate-pulse-glow" />
-        <div className="absolute bottom-10 right-0 h-80 w-80 rounded-full bg-brand-dark/40 blur-3xl" />
+      <section className="relative min-h-[calc(100vh-5.5rem)] flex items-center overflow-hidden pt-24 pb-12 bg-[radial-gradient(circle_at_top_left,#f1fdea_15%,transparent_45%),radial-gradient(circle_at_bottom_right,#d6f4d6_0%,transparent_55%)] text-ink">
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-[#e9f9ea]/80 to-[#f3fbf1]/90" />
+        <div className="absolute top-16 -left-16 h-80 w-80 rounded-full bg-brand/25 blur-3xl" />
+        <div className="absolute bottom-8 right-0 h-72 w-72 rounded-full bg-brand/20 blur-3xl" />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative mx-auto max-w-7xl px-6 py-14 grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
           <div className="animate-fade-up">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-dark text-xs font-medium tracking-widest uppercase text-brand-glow">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-dark text-xs font-medium tracking-widest uppercase text-ink">
               <Sparkles size={14} /> Research · Innovation · Impact
             </span>
-            <h2 className="mt-6 text-6xl md:text-8xl font-extrabold leading-[0.95] tracking-tight">
+            <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[0.95] tracking-tight">
               <span
                 className="bg-clip-text text-transparent drop-shadow-[0_2px_20px_rgba(26,122,60,0.25)]"
                 style={{ backgroundImage: "linear-gradient(135deg, #0f5132 0%, #1a7a3c 45%, #2ecc71 100%)" }}
@@ -100,8 +99,8 @@ function HomePage() {
               Engineering <span className="text-gradient-brand">tomorrow's</span> software today
             </h1>
             <p className="mt-6 text-lg text-ink/70 max-w-xl">
-              Anastasis Technologies fuses research, AI and modern engineering to build products
-              that revive industries and drive measurable impact.
+              We combine applied research, AI and modern engineering to deliver automation-first products that replace manual work
+              with intelligent systems, faster releases, and measurable business outcomes.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -133,18 +132,87 @@ function HomePage() {
           </div>
 
           <div className="relative animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            <div className="relative aspect-square max-w-lg mx-auto">
-              <div className="absolute inset-0 bg-gradient-brand rounded-[3rem] blur-3xl opacity-40 animate-pulse-glow" />
-              <div className="relative glass-dark rounded-[3rem] p-10 h-full flex items-center justify-center animate-float">
-                <img src={logo.url} alt="Anastasis Technologies logo" className="w-full h-auto brightness-0 invert-[0.95] contrast-125" />
-              </div>
-              <div className="absolute -bottom-6 -right-6 glass-dark rounded-2xl p-4 shadow-glow">
-                <div className="text-xs text-brand-glow uppercase tracking-widest">Recursion</div>
-                <div className="text-2xl font-bold">∞ Loop</div>
-              </div>
-              <div className="absolute -top-6 -left-6 glass-dark rounded-2xl p-4 shadow-glow">
-                <div className="text-xs text-brand-glow uppercase tracking-widest">R&D</div>
-                <div className="text-2xl font-bold">Live</div>
+            <div className="relative max-w-md mx-auto lg:max-w-[520px]">
+              <div className="absolute inset-0 bg-brand/10 rounded-[3rem] blur-3xl opacity-40" />
+              <div className="relative rounded-[3rem] border border-white/80 bg-white/90 p-6 md:p-8 shadow-[0_28px_80px_-48px_rgba(46,125,50,0.32)]">
+                <div className="flex items-center gap-3">
+                  <div className="grid place-items-center h-11 w-11 rounded-2xl bg-gradient-brand text-white shadow-glow">
+                    <Brain size={20} />
+                  </div>
+                  <div>
+                    <div className="text-xs uppercase tracking-widest text-brand-glow">Autonomous Delivery</div>
+                    <div className="text-lg font-bold leading-tight">AI-Run Engineering</div>
+                  </div>
+                </div>
+
+                <p className="mt-4 text-sm text-ink/70 leading-relaxed">
+                  Intelligent agents plan, build and ship — while humans stay on strategy. From data
+                  pipelines to production releases, the loop keeps running without hiring more hands.
+                </p>
+
+                {/* Neural / automation flow illustration */}
+                <svg viewBox="0 0 320 140" className="mt-6 w-full h-auto" role="img" aria-label="AI automation workflow diagram">
+                  <defs>
+                    <linearGradient id="heroFlow" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#0f5132" />
+                      <stop offset="55%" stopColor="#1a7a3c" />
+                      <stop offset="100%" stopColor="#2ecc71" />
+                    </linearGradient>
+                  </defs>
+                  {[
+                    [40, 30, 160, 70], [40, 70, 160, 70], [40, 110, 160, 70],
+                    [160, 70, 280, 40], [160, 70, 280, 100],
+                  ].map(([x1, y1, x2, y2], i) => (
+                    <line
+                      key={i}
+                      x1={x1} y1={y1} x2={x2} y2={y2}
+                      stroke="url(#heroFlow)" strokeWidth="1.5" strokeLinecap="round" opacity="0.55"
+                    >
+                      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" begin={`${i * 0.35}s`} repeatCount="indefinite" />
+                    </line>
+                  ))}
+                  {[
+                    [40, 30, 7], [40, 70, 7], [40, 110, 7],
+                    [160, 70, 13],
+                    [280, 40, 7], [280, 100, 7],
+                  ].map(([cx, cy, r], i) => (
+                    <circle key={i} cx={cx} cy={cy} r={r} fill="url(#heroFlow)">
+                      <animate attributeName="r" values={`${r};${Number(r) + 2};${r}`} dur="2.4s" begin={`${i * 0.3}s`} repeatCount="indefinite" />
+                    </circle>
+                  ))}
+                </svg>
+
+                <div className="mt-6 rounded-3xl border border-white/10 bg-white/60 p-5 backdrop-blur-sm">
+                  <div className="flex items-start gap-3">
+                    <div className="grid place-items-center h-11 w-11 rounded-2xl bg-brand text-white shadow-glow">
+                      <Sparkles size={18} />
+                    </div>
+                    <div>
+                      <p className="text-sm uppercase tracking-[0.24em] text-brand-glow">Digital transformation</p>
+                      <p className="mt-2 text-base font-semibold text-ink">
+                        AI-powered systems that reduce complexity, accelerate delivery, and keep product momentum alive.
+                      </p>
+                    </div>
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-ink/70">
+                    A connected automation layer turns strategy into shipped software while engineering teams stay focused on outcomes.
+                  </p>
+                </div>
+
+                <div className="mt-6 grid grid-cols-3 gap-3">
+                  {[
+                    { icon: Zap, label: "Automation" },
+                    { icon: Code2, label: "Engineering" },
+                    { icon: Sparkles, label: "Innovation" },
+                  ].map((c) => (
+                    <div key={c.label} className="rounded-2xl bg-brand/10 p-3 text-center">
+                      <c.icon size={18} className="mx-auto text-brand" />
+                      <div className="mt-1.5 text-[11px] font-semibold uppercase tracking-wide text-ink/70">
+                        {c.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -201,7 +269,7 @@ function HomePage() {
         <div className="absolute inset-0 bg-gradient-radial opacity-40" />
         <div className="relative grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="text-xs font-semibold tracking-widest uppercase text-brand-glow">Why Anastasis</span>
+            <span className="text-xs font-semibold tracking-widest uppercase text-brand-glow">Why work with us</span>
             <h2 className="mt-3 text-4xl md:text-5xl font-bold">
               A partner obsessed with <span className="text-gradient-brand">outcomes</span>
             </h2>
