@@ -183,6 +183,45 @@
   100% { background-position: 1000px 0; }
 }
 
+@keyframes shine-sweep {
+  from {
+    transform: translateX(-120%) skewX(-20deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(120%) skewX(-20deg);
+    opacity: 1;
+  }
+}
+
+:where(button, a).bg-primary,
+:where(button, a).bg-gradient-brand {
+  position: relative;
+  overflow: hidden;
+}
+
+:where(button, a).bg-primary::after,
+:where(button, a).bg-gradient-brand::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%) skewX(-20deg);
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.38) 48%,
+    rgba(255,255,255,0.16) 52%,
+    rgba(255,255,255,0) 100%
+  );
+  opacity: 0;
+}
+
+:where(button, a).bg-primary:hover::after,
+:where(button, a).bg-gradient-brand:hover::after {
+  animation: shine-sweep 0.75s ease forwards;
+}
+
 @utility animate-float {
   animation: float 4s ease-in-out infinite;
 }

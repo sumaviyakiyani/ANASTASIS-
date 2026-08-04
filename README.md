@@ -1,69 +1,79 @@
-# ANASTASIS Website
+# ANASTASIS Technologies Pvt Ltd
 
-This project is developed using React + Vite.
+A modern web application built with **React, Vite, TypeScript, Tailwind CSS, and Supabase**.
 
 ## Requirements
 
-Before running the project, make sure the following software is installed:
+- Node.js (Latest LTS)
+- npm
 
-- Node.js (Latest LTS Version)
-- npm (Comes with Node.js)
-- Visual Studio Code (Recommended)
+## Installation
 
-## How to Run the Project
-
-### Step 1: Clone the Repository
+Clone the repository:
 
 ```bash
-git clone https://github.com/itzfloraphile-del/ANASTASIS-.git
+git clone https://github.com/YOUR_GITHUB_USERNAME/ANASTASIS-.git
 ```
 
-### Step 2: Open the Project Folder
+Go to the project folder:
 
 ```bash
 cd ANASTASIS-
 ```
 
-### Step 3: Install Dependencies
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Step 4: Start the Development Server
+## Run the Project
+
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-### Step 5: Open the Project in Your Browser
+Then open:
 
-After running the above command, Vite will display a local development URL similar to:
-
-```
-http://localhost:5173/
+```text
+http://localhost:8080
 ```
 
-Open this URL in your browser to view the website.
+*(If your terminal shows another port such as 5173, 4173, etc., open that URL instead.)*
 
-## Production Build
-
-To create an optimized production build, run:
+## Build for Production
 
 ```bash
 npm run build
 ```
 
-To preview the production build locally:
+## Preview Production Build
 
 ```bash
 npm run preview
 ```
 
-## Technologies Used
+## Important
+
+❌ Do **NOT** use **Go Live / Live Server** for this project.
+
+✅ Always run the project using:
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+**Tech Stack**
 
 - React
 - Vite
 - TypeScript
 - Tailwind CSS
-- shadcn/ui
+- Supabase
+
+---
