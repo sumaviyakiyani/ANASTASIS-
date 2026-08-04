@@ -5,7 +5,8 @@ import { ArrowRight, Eye, EyeOff, Loader2, Lock, Mail, ShieldCheck, Sparkles, Us
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
 import { useSession } from "@/hooks/useSession";
-import logo from "@/assets/anastasis-logo-mark.png.asset.json";
+import { SiteLayout } from "@/components/SiteLayout";
+import logo from "@/assets/Logo.png";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
@@ -136,9 +137,10 @@ function AuthPage() {
   };
 
   return (
-    <main className="relative min-h-screen w-full overflow-hidden bg-background lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
-      {/* Left column */}
-      <section className="relative z-10 flex flex-col justify-center px-6 py-14 sm:px-10 lg:px-16 lg:py-20">
+    <SiteLayout>
+      <div className="relative min-h-screen w-full overflow-hidden bg-background lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
+        {/* Left column */}
+        <section className="relative z-10 flex flex-col justify-center px-6 py-14 sm:px-10 lg:px-16 lg:py-20">
         <div
           className="pointer-events-none absolute inset-0 -z-10"
           style={{
@@ -146,18 +148,6 @@ function AuthPage() {
               "radial-gradient(circle at 75% 30%, oklch(0.85 0.16 148 / 0.22), transparent 60%)",
           }}
         />
-        <Link to="/" className="flex items-center gap-4">
-          <img src={logo.url} alt="Anastasis Technologies" className="h-16 w-auto sm:h-20" />
-          <span className="min-w-0">
-            <span className="block text-2xl font-extrabold tracking-tight text-brand-dark sm:text-4xl">
-              ANASTASIS
-            </span>
-            <span className="block text-[0.6rem] font-medium tracking-[0.22em] text-ink sm:text-sm">
-              TECHNOLOGIES PVT LTD
-            </span>
-          </span>
-        </Link>
-
         <h1 className="mt-10 text-4xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:mt-14 lg:text-6xl">
           Engineering the{" "}
           <span className="text-brand">
@@ -334,7 +324,8 @@ function AuthPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
+    </SiteLayout>
   );
 }
 
