@@ -77,17 +77,17 @@ function HomePage() {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="relative min-h-[calc(100vh-5.5rem)] flex items-center overflow-hidden pt-24 pb-12 bg-[radial-gradient(circle_at_top_left,#f1fdea_15%,transparent_45%),radial-gradient(circle_at_bottom_right,#d6f4d6_0%,transparent_55%)] text-ink">
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-[#e9f9ea]/80 to-[#f3fbf1]/90" />
-        <div className="absolute top-16 -left-16 h-80 w-80 rounded-full bg-brand/25 blur-3xl" />
-        <div className="absolute bottom-8 right-0 h-72 w-72 rounded-full bg-brand/20 blur-3xl" />
+      <section className="relative min-h-screen flex items-center bg-gradient-dark text-ink overflow-hidden pt-24">
+        <div className="absolute inset-0 bg-gradient-radial opacity-70" />
+        <div className="absolute top-20 -left-20 h-96 w-96 rounded-full bg-brand/30 blur-3xl animate-pulse-glow" />
+        <div className="absolute bottom-10 right-0 h-80 w-80 rounded-full bg-brand-dark/40 blur-3xl" />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-14 grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+        <div className="relative mx-auto max-w-7xl px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-up">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-dark text-xs font-medium tracking-widest uppercase text-ink">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-dark text-xs font-medium tracking-widest uppercase text-brand-glow">
               <Sparkles size={14} /> Research · Innovation · Impact
             </span>
-            <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[0.95] tracking-tight">
+            <h2 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95] tracking-tight">
               <span
                 className="bg-clip-text text-transparent drop-shadow-[0_2px_20px_rgba(26,122,60,0.25)]"
                 style={{ backgroundImage: "linear-gradient(135deg, #0f5132 0%, #1a7a3c 45%, #2ecc71 100%)" }}
@@ -99,8 +99,8 @@ function HomePage() {
               Engineering <span className="text-gradient-brand">tomorrow's</span> software today
             </h1>
             <p className="mt-6 text-lg text-ink/70 max-w-xl">
-              We combine applied research, AI and modern engineering to deliver automation-first products that replace manual work
-              with intelligent systems, faster releases, and measurable business outcomes.
+              We fuse applied research, AI and modern engineering to build automation-first products —
+              replacing manual work with intelligent systems that deliver measurable impact.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -132,9 +132,9 @@ function HomePage() {
           </div>
 
           <div className="relative animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            <div className="relative max-w-md mx-auto lg:max-w-[520px]">
-              <div className="absolute inset-0 bg-brand/10 rounded-[3rem] blur-3xl opacity-40" />
-              <div className="relative rounded-[3rem] border border-white/80 bg-white/90 p-6 md:p-8 shadow-[0_28px_80px_-48px_rgba(46,125,50,0.32)]">
+            <div className="relative max-w-lg mx-auto">
+              <div className="absolute inset-0 bg-gradient-brand rounded-[3rem] blur-3xl opacity-40 animate-pulse-glow" />
+              <div className="relative glass-dark rounded-[3rem] p-8 md:p-10 animate-float">
                 <div className="flex items-center gap-3">
                   <div className="grid place-items-center h-11 w-11 rounded-2xl bg-gradient-brand text-white shadow-glow">
                     <Brain size={20} />
@@ -181,23 +181,6 @@ function HomePage() {
                     </circle>
                   ))}
                 </svg>
-
-                <div className="mt-6 rounded-3xl border border-white/10 bg-white/60 p-5 backdrop-blur-sm">
-                  <div className="flex items-start gap-3">
-                    <div className="grid place-items-center h-11 w-11 rounded-2xl bg-brand text-white shadow-glow">
-                      <Sparkles size={18} />
-                    </div>
-                    <div>
-                      <p className="text-sm uppercase tracking-[0.24em] text-brand-glow">Digital transformation</p>
-                      <p className="mt-2 text-base font-semibold text-ink">
-                        AI-powered systems that reduce complexity, accelerate delivery, and keep product momentum alive.
-                      </p>
-                    </div>
-                  </div>
-                  <p className="mt-4 text-sm leading-relaxed text-ink/70">
-                    A connected automation layer turns strategy into shipped software while engineering teams stay focused on outcomes.
-                  </p>
-                </div>
 
                 <div className="mt-6 grid grid-cols-3 gap-3">
                   {[

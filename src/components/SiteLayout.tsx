@@ -1,6 +1,8 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
-import { Menu, X, Mail, Phone, MapPin, Linkedin, Twitter, Github, Facebook } from "lucide-react";
+import { Menu, X, Mail, Phone, MapPin, Linkedin, Twitter, Github, Facebook, UserCircle } from "lucide-react";
+import logo from "@/assets/anastasis-logo-mark.png.asset.json";
+import { useSession } from "@/hooks/useSession";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -12,10 +14,13 @@ const nav = [
   { to: "/contact", label: "Contact" },
 ] as const;
 
+
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const { session } = useSession();
+
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -29,18 +34,12 @@ function Navbar() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "glass-dark shadow-elegant"
-          : "bg-white/85 backdrop-blur-xl shadow-sm"
+        scrolled ? "glass-dark shadow-elegant" : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img
-            src="/LOGO.png"
-            alt="Anastasis Technologies"
-            className="h-12 w-auto"
-          />
+          <img src={logo.url} alt="Anastasis Technologies" className="h-10 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -62,15 +61,27 @@ function Navbar() {
           })}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-5">
-          <Link to="/login" className="text-sm font-medium text-ink/80 transition hover:text-brand">
-            Sign in
-          </Link>
+        <div className="hidden lg:flex items-center gap-2">
+          {session ? (
+            <Link
+              to="/account"
+              className="inline-flex items-center gap-2 rounded-full border border-brand/30 px-4 py-2.5 text-sm font-semibold text-ink transition hover:bg-brand/10"
+            >
+              <UserCircle size={16} /> Account
+            </Link>
+          ) : (
+            <Link
+              to="/auth"
+              className="rounded-full px-4 py-2.5 text-sm font-semibold text-ink/80 transition hover:text-ink hover:bg-brand/10"
+            >
+              Sign in
+            </Link>
+          )}
           <Link
-            to="/contact"
+            to={session ? "/premium" : "/auth"}
             className="rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition-transform hover:scale-105"
           >
-            Get Started
+            {session ? "Go Premium" : "Get Started"}
           </Link>
         </div>
 
@@ -97,13 +108,20 @@ function Navbar() {
               </Link>
             ))}
             <Link
-              to="/contact"
+              to={session ? "/account" : "/auth"}
+              className="px-4 py-3 rounded-lg text-ink/90 hover:bg-brand/10 font-medium"
+            >
+              {session ? "My account" : "Sign in"}
+            </Link>
+            <Link
+              to={session ? "/premium" : "/auth"}
               className="mt-2 text-center rounded-full bg-gradient-brand px-5 py-3 font-semibold text-white"
             >
-              Get Started
+              {session ? "Go Premium" : "Get Started"}
             </Link>
           </div>
         </div>
+
       )}
     </header>
   );
@@ -115,11 +133,7 @@ function Footer() {
       <div className="absolute inset-0 bg-gradient-radial opacity-40 pointer-events-none" />
       <div className="relative mx-auto max-w-7xl px-6 py-16 grid gap-10 md:grid-cols-4">
         <div>
-          <img
-            src="/LOGO.png"
-            alt="Anastasis"
-            className="h-14 w-auto max-w-[220px]"
-          />
+          <img src={logo.url} alt="Anastasis" className="h-12 w-auto" />
           <p className="mt-4 text-sm text-ink/60 leading-relaxed">
             Research · Innovation · Recursion · Revival · Impact. Building tomorrow's software today.
           </p>
