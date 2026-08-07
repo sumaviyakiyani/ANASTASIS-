@@ -84,7 +84,7 @@ function HomePage() {
 
         <div className="relative mx-auto max-w-7xl px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-up">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-dark text-xs font-medium tracking-widest uppercase text-black">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-dark text-xs font-medium tracking-widest uppercase text-brand-glow">
               <Sparkles size={14} /> Research · Innovation · Impact
             </span>
             <h2 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95] tracking-tight">
