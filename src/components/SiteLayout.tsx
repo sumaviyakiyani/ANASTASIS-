@@ -37,9 +37,9 @@ export function Navbar() {
         scrolled ? "glass-dark shadow-elegant" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img src={logo} alt="Anastasis Technologies" className="h-10 w-auto" />
+          <img src={logo} alt="Anastasis Technologies" className="h-8 w-auto sm:h-10" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -97,7 +97,7 @@ export function Navbar() {
       {open && (
         <div className="lg:hidden glass-dark border-t border-brand/20 animate-fade-up">
 
-          <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col gap-1">
+          <div className="mx-auto max-w-7xl px-4 py-4 flex flex-col gap-1 sm:px-6">
             {nav.map((n) => (
               <Link
                 key={n.to}
@@ -131,7 +131,7 @@ function Footer() {
   return (
     <footer className="relative mt-24 bg-gradient-dark text-ink/80 border-t border-brand/20">
       <div className="absolute inset-0 bg-gradient-radial opacity-40 pointer-events-none" />
-      <div className="relative mx-auto max-w-7xl px-6 py-16 grid gap-10 md:grid-cols-4">
+      <div className="relative mx-auto max-w-7xl px-4 py-16 grid gap-10 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <img src={logo} alt="Anastasis" className="h-12 w-auto" />
           <p className="mt-4 text-sm text-ink/60 leading-relaxed">
@@ -178,7 +178,7 @@ function Footer() {
         </div>
       </div>
       <div className="relative border-t border-brand/20">
-        <div className="mx-auto max-w-7xl px-6 py-5 text-xs text-ink/60 flex flex-wrap gap-2 justify-between">
+        <div className="mx-auto max-w-7xl px-4 py-5 text-xs text-ink/60 flex flex-wrap gap-2 justify-between sm:px-6">
           <span>© {new Date().getFullYear()} Anastasis Technologies Pvt Ltd. All rights reserved.</span>
           <span>Research | Innovation | Recursion | Revival | Impact</span>
         </div>
@@ -189,7 +189,7 @@ function Footer() {
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Navbar />
       <main className="flex-1">{children}</main>
       <Footer />
@@ -207,7 +207,7 @@ export function Section({
   id?: string;
 }) {
   return (
-    <section id={id} className={`py-20 md:py-28 px-6 ${className}`}>
+    <section id={id} className={`px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24 ${className}`}>
       <div className="mx-auto max-w-7xl">{children}</div>
     </section>
   );
@@ -223,7 +223,7 @@ export function PageHero({
   subtitle?: string;
 }) {
   return (
-    <section className="relative pt-40 pb-20 px-6 bg-gradient-dark text-ink overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-dark px-4 pb-16 pt-24 text-ink sm:px-6 sm:pb-20 sm:pt-28 lg:px-8 lg:pb-24 lg:pt-32">
       <div className="absolute inset-0 bg-gradient-radial opacity-60" />
       <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-brand/20 blur-3xl" />
       <div className="relative mx-auto max-w-4xl text-center animate-fade-up">
@@ -232,10 +232,10 @@ export function PageHero({
             {eyebrow}
           </span>
         )}
-        <h1 className="mt-6 text-4xl md:text-6xl font-bold">
+        <h1 className="mt-6 text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
           <span className="text-gradient-brand">{title}</span>
         </h1>
-        {subtitle && <p className="mt-6 text-lg text-ink/70 max-w-2xl mx-auto">{subtitle}</p>}
+        {subtitle && <p className="mx-auto mt-6 max-w-2xl text-base text-ink/70 sm:text-lg">{subtitle}</p>}
       </div>
     </section>
   );

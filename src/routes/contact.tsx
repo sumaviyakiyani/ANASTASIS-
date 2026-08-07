@@ -8,7 +8,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Anastasis Technologies" },
-      { name: "description", content: "Get in touch with Anastasis Technologies — start your project today." },
+      { name: "description", content: "Get in touch with Anastasis Technologies and start your project today." },
       { property: "og:title", content: "Contact · Anastasis Technologies" },
       { property: "og:description", content: "Talk to our team about your next project." },
     ],
@@ -130,8 +130,8 @@ function Contact() {
 
             {error && <div className="text-sm text-destructive">{error}</div>}
             {sent && (
-              <div className="flex items-center gap-2 text-sm text-brand font-semibold">
-                <CheckCircle2 size={18} /> Message sent — we'll be in touch soon.
+              <div className="flex items-center gap-2 text-sm font-semibold text-brand">
+                <CheckCircle2 size={18} /> Message sent. We will be in touch soon.
               </div>
             )}
 

@@ -5,7 +5,7 @@ import { SiteLayout, Section, PageHero } from "@/components/SiteLayout";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Projects, Teams, Clients & Achievements | Anastasis" },
+      { title: "Portfolio — Projects, Teams, Clients and Achievements | Anastasis" },
       {
         name: "description",
         content:
@@ -31,37 +31,37 @@ const projects: { title: string; status: Status; desc: string; tone: string }[] 
   {
     title: "NexoraOS Platform",
     status: "Completed",
-    desc: "SaaS operations platform for logistics teams with live fleet tracking.",
+    desc: "SaaS operations platform for logistics teams with live fleet tracking and operations insight.",
     tone: "from-emerald-500 to-green-800",
   },
   {
     title: "BioTrace Mobile",
     status: "Completed",
-    desc: "Offline-first field health data capture app for rural clinics.",
+    desc: "Offline-first field health data capture app for rural clinics and outreach teams.",
     tone: "from-green-400 to-emerald-700",
   },
   {
     title: "Helix RAG Engine",
     status: "Ongoing",
-    desc: "Enterprise retrieval engine reasoning over 2M internal documents.",
+    desc: "Enterprise retrieval engine that reasons over 2M internal documents.",
     tone: "from-lime-500 to-green-700",
   },
   {
     title: "Orbital Dashboard",
     status: "Completed",
-    desc: "Real-time telemetry visualization for satellite ground stations.",
+    desc: "Real-time telemetry visualization for satellite ground stations and operators.",
     tone: "from-emerald-600 to-green-900",
   },
   {
     title: "Quanta Vision",
     status: "Ongoing",
-    desc: "Computer-vision quality assurance for high-throughput factories.",
+    desc: "Computer-vision quality assurance for high-throughput factory operations.",
     tone: "from-green-500 to-emerald-800",
   },
   {
     title: "FlowForge Automation",
     status: "Ongoing",
-    desc: "Zero-headcount back-office automation suite for finance teams.",
+    desc: "Back-office automation suite for finance teams that reduces manual effort.",
     tone: "from-emerald-500 to-green-700",
   },
 ];

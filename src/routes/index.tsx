@@ -77,17 +77,17 @@ function HomePage() {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center bg-gradient-dark text-ink overflow-hidden pt-24">
+      <section className="relative flex min-h-screen items-center overflow-hidden bg-gradient-dark px-4 pt-24 text-ink sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
         <div className="absolute inset-0 bg-gradient-radial opacity-70" />
         <div className="absolute top-20 -left-20 h-96 w-96 rounded-full bg-brand/30 blur-3xl animate-pulse-glow" />
         <div className="absolute bottom-10 right-0 h-80 w-80 rounded-full bg-brand-dark/40 blur-3xl" />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-0 py-16 sm:gap-10 sm:py-20 lg:grid-cols-2 lg:gap-12 lg:px-0">
           <div className="animate-fade-up">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-dark text-xs font-medium tracking-widest uppercase text-black">
               <Sparkles size={14} /> Research · Innovation · Impact
             </span>
-            <h2 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95] tracking-tight">
+            <h2 className="mt-6 text-4xl font-extrabold leading-[0.95] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
               <span
                 className="bg-clip-text text-transparent drop-shadow-[0_2px_20px_rgba(26,122,60,0.25)]"
                 style={{ backgroundImage: "linear-gradient(135deg, #0f5132 0%, #1a7a3c 45%, #2ecc71 100%)" }}
@@ -95,30 +95,30 @@ function HomePage() {
                 No More Employees
               </span>
             </h2>
-            <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-[1.1] text-ink/90">
+            <h1 className="mt-5 text-2xl font-bold leading-[1.1] text-ink/90 sm:text-3xl md:text-4xl lg:text-5xl">
               Engineering <span className="text-gradient-brand">tomorrow's</span> software today
             </h1>
-            <p className="mt-6 text-lg text-ink/70 max-w-xl">
+            <p className="mt-6 max-w-xl text-base text-ink/70 sm:text-lg">
               We fuse applied research, AI and modern engineering to build automation-first products —
               replacing manual work with intelligent systems that deliver measurable impact.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-gradient-brand px-7 py-3.5 font-semibold shadow-glow transition-transform hover:scale-105"
+                className="group inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 font-semibold shadow-glow transition-transform hover:scale-105 sm:px-7 sm:py-3.5"
               >
                 Get Started
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 rounded-full glass-dark px-7 py-3.5 font-semibold hover:bg-white/10 transition"
+                className="inline-flex items-center gap-2 rounded-full glass-dark px-6 py-3 font-semibold transition hover:bg-white/10 sm:px-7 sm:py-3.5"
               >
                 Our Services
               </Link>
             </div>
 
-            <div className="mt-10 flex items-center gap-6 text-sm text-ink/60">
+            <div className="mt-10 flex flex-wrap items-center gap-4 text-sm text-ink/60 sm:gap-6">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
                   <div
@@ -134,7 +134,7 @@ function HomePage() {
           <div className="relative animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <div className="relative max-w-lg mx-auto">
               <div className="absolute inset-0 bg-gradient-brand rounded-[3rem] blur-3xl opacity-40 animate-pulse-glow" />
-              <div className="relative glass-dark rounded-[3rem] p-8 md:p-10 animate-float">
+              <div className="relative animate-float rounded-[3rem] glass-dark p-6 sm:p-8 md:p-10">
                 <div className="flex items-center gap-3">
                   <div className="grid place-items-center h-11 w-11 rounded-2xl bg-gradient-brand text-white shadow-glow">
                     <Brain size={20} />
@@ -182,7 +182,7 @@ function HomePage() {
                   ))}
                 </svg>
 
-                <div className="mt-6 grid grid-cols-3 gap-3">
+                <div className="mt-6 grid gap-3 sm:grid-cols-3">
                   {[
                     { icon: Zap, label: "Automation" },
                     { icon: Code2, label: "Engineering" },
@@ -204,7 +204,7 @@ function HomePage() {
 
       {/* Partners strip */}
       <div className="border-y bg-muted/50">
-        <div className="mx-auto max-w-7xl px-6 py-8 flex flex-wrap items-center justify-around gap-x-10 gap-y-4">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-around gap-x-6 gap-y-4 px-4 py-8 sm:px-6 sm:gap-x-10">
           {partners.map((p) => (
             <div key={p} className="text-sm font-bold tracking-[0.2em] text-muted-foreground/70 hover:text-brand transition">
               {p}
@@ -229,7 +229,7 @@ function HomePage() {
           {services.map((s, i) => (
             <div
               key={s.title}
-              className="group relative p-8 rounded-3xl bg-card border shadow-card hover:shadow-glow hover:-translate-y-2 transition-all duration-300 overflow-hidden"
+              className="group relative overflow-hidden rounded-3xl border bg-card p-6 shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-glow sm:p-8"
               style={{ animationDelay: `${i * 60}ms` }}
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-brand transition-opacity duration-500 -z-0" />
@@ -253,7 +253,7 @@ function HomePage() {
         <div className="relative grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="text-xs font-semibold tracking-widest uppercase text-brand-glow">Why work with us</span>
-            <h2 className="mt-3 text-4xl md:text-5xl font-bold">
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">
               A partner obsessed with <span className="text-gradient-brand">outcomes</span>
             </h2>
             <p className="mt-4 text-ink/70">
@@ -267,7 +267,7 @@ function HomePage() {
                 { icon: Zap, t: "Fast to value", d: "Weekly delivery cadence with measurable milestones." },
                 { icon: Users, t: "Senior team", d: "Small, senior squads — no hand-offs, no juniors on the wheel." },
               ].map((f) => (
-                <div key={f.t} className="flex gap-4 items-start glass-dark p-4 rounded-2xl hover:bg-brand/10 transition">
+                <div key={f.t} className="flex items-start gap-4 rounded-2xl glass-dark p-4 transition hover:bg-brand/10">
                   <div className="grid place-items-center h-11 w-11 rounded-xl bg-gradient-brand shrink-0">
                     <f.icon size={20} />
                   </div>
@@ -284,9 +284,9 @@ function HomePage() {
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="glass-dark rounded-3xl p-8 text-center hover:scale-105 transition-transform"
+                className="rounded-3xl glass-dark p-6 text-center transition-transform hover:scale-105 sm:p-8"
               >
-                <div className="text-5xl font-bold text-gradient-brand">
+                <div className="text-4xl font-bold text-gradient-brand sm:text-5xl">
                   <Counter value={s.value} suffix={s.suffix} />
                 </div>
                 <div className="mt-2 text-sm uppercase tracking-widest text-ink/60">{s.label}</div>
@@ -301,7 +301,7 @@ function HomePage() {
         <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-brand p-12 md:p-20 text-center text-white shadow-glow">
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_20%_20%,white,transparent_50%)]" />
           <div className="relative">
-            <h2 className="text-4xl md:text-5xl font-bold">Have a bold idea? Let's build it.</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">Have a bold idea? Let's build it.</h2>
             <p className="mt-4 text-ink/90 max-w-xl mx-auto">
               Book a free discovery call and turn your vision into a shipping product.
             </p>

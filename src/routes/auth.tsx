@@ -171,27 +171,26 @@ function AuthPage() {
       <Navbar />
       <main className="relative min-h-screen w-full overflow-hidden bg-background lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
         {/* Left column */}
-        <section className="relative z-10 flex flex-col justify-center px-6 pb-14 pt-28 sm:px-10 lg:px-16 lg:pb-20 lg:pt-32">
+        <section className="relative z-10 flex flex-col justify-center px-4 pb-14 pt-24 sm:px-6 sm:pb-16 sm:pt-28 lg:px-8 lg:pb-20 lg:pt-32">
           <div
             className="pointer-events-none absolute inset-0 -z-10"
             style={{
               background: "radial-gradient(circle at 75% 30%, oklch(0.85 0.16 148 / 0.22), transparent 60%)",
             }}
           />
-          <h1 className="mt-10 text-4xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:mt-14 lg:text-6xl">
-            Engineering the <span className="text-brand">resurrection of tech.</span>
+          <h1 className="mt-10 text-3xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-4xl lg:mt-14 lg:text-5xl xl:text-6xl">
+            Building dependable <span className="text-brand">technology with lasting impact.</span>
           </h1>
 
           <p className="mt-6 max-w-lg text-base leading-relaxed text-ink-soft sm:text-lg">
-            Anastasis Technologies Pvt Ltd crafts premium digital systems where minimalism meets depth — secure,
-            fast, and beautifully human.
+            Anastasis Technologies Pvt Ltd builds dependable digital systems that are secure, fast and easy to use.
           </p>
 
           <div className="mt-10 max-w-xl space-y-4">
             {features.map(({ icon: Icon, title, body }) => (
               <div
                 key={title}
-                className="flex items-center gap-4 rounded-2xl border border-brand/15 bg-card/70 px-5 py-4 shadow-card backdrop-blur-md"
+                className="flex items-center gap-4 rounded-2xl border border-brand/15 bg-card/70 px-4 py-4 shadow-card backdrop-blur-md sm:px-5"
               >
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand/12 text-brand-dark">
                   <Icon size={18} />
@@ -206,7 +205,7 @@ function AuthPage() {
         </section>
 
         {/* Right column */}
-        <section className="relative flex items-center justify-center px-6 pb-14 pt-14 sm:px-10 lg:px-16 lg:pb-20 lg:pt-32">
+        <section className="relative flex items-center justify-center px-4 pb-14 pt-14 sm:px-6 lg:px-8 lg:pb-20 lg:pt-32">
           <div
             className="pointer-events-none absolute inset-0"
             style={{
@@ -224,7 +223,7 @@ function AuthPage() {
             }}
           />
 
-          <div className="relative z-10 w-full max-w-md rounded-[2rem] border border-white/50 bg-white/55 p-7 shadow-glow backdrop-blur-2xl sm:p-9">
+          <div className="relative z-10 w-full max-w-md rounded-[2rem] border border-white/50 bg-white/55 p-6 shadow-glow backdrop-blur-2xl sm:p-8 md:p-9">
             <div className="grid grid-cols-2 gap-1 rounded-2xl bg-white/60 p-1">
               {(["signin", "signup"] as const).map((t) => (
                 <button
@@ -244,7 +243,7 @@ function AuthPage() {
               ))}
             </div>
 
-            <h2 className="mt-6 text-2xl font-bold leading-tight tracking-tight text-ink sm:text-[1.75rem]">
+            <h2 className="mt-6 text-xl font-bold leading-tight tracking-tight text-ink sm:text-2xl">
               {tab === "signin" ? "Continue to your account" : "Create your account"}
             </h2>
 

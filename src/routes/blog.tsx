@@ -49,7 +49,7 @@ const news = [
     title: "New research and delivery hub opens in Islamabad",
     date: "Jul 28, 2026",
     read: "3 min",
-    body: "A dedicated lab space for automation and applied AI work, doubling our delivery capacity for enterprise programs.",
+    body: "A dedicated lab space for automation and applied AI work is now doubling our delivery capacity for enterprise programs.",
   },
   {
     icon: Lightbulb,
@@ -57,7 +57,7 @@ const news = [
     title: "Autonomous delivery pipeline reaches production maturity",
     date: "Jul 09, 2026",
     read: "5 min",
-    body: "Our internal loop now plans, builds, tests and ships increments with human review only at decision gates.",
+    body: "Our internal loop now plans, builds, tests and ships increments with human review at key decision gates.",
   },
   {
     icon: ScrollText,
@@ -65,7 +65,7 @@ const news = [
     title: "Recursion in production ML pipelines",
     date: "Jun 10, 2026",
     read: "6 min",
-    body: "Practical patterns and trade-offs for self-referential training loops that stay observable and safe.",
+    body: "Practical patterns and trade-offs for self-referential training loops that remain observable and safe.",
   },
 ];
 
@@ -352,7 +352,7 @@ function Insights() {
 
       {/* Project Portfolio & Innovation (moved from Portfolio) */}
       <Section className="pt-0">
-        <h2 className="text-3xl md:text-4xl font-bold text-center">Project Portfolio &amp; Innovation</h2>
+        <h2 className="text-3xl font-bold text-center md:text-4xl">Project Portfolio &amp; Innovation</h2>
         <h3 className="mt-8 text-2xl md:text-3xl font-bold text-center">Project categories</h3>
         <div className="flex flex-wrap justify-center gap-2 mt-8 mb-10">
           {cats.map((c) => (
@@ -423,7 +423,7 @@ function Insights() {
 
       {/* Industry insights */}
       <Section className="pt-0">
-        <h2 className="text-3xl md:text-4xl font-bold text-center">Industry insights</h2>
+        <h2 className="text-3xl font-bold text-center md:text-4xl">Industry insights</h2>
         <p className="mt-4 text-center text-muted-foreground max-w-2xl mx-auto">
           What we are seeing across the sectors we build in.
         </p>
@@ -445,7 +445,7 @@ function Insights() {
 
       {/* Research & innovation */}
       <Section className="pt-0">
-        <h2 className="text-3xl md:text-4xl font-bold text-center">Research &amp; innovation</h2>
+        <h2 className="text-3xl font-bold text-center md:text-4xl">Research &amp; innovation</h2>
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {research.map((r) => (
             <div key={r.title} className="rounded-3xl bg-card border shadow-card p-7 hover:shadow-glow transition">
@@ -461,7 +461,7 @@ function Insights() {
 
       {/* Partnerships */}
       <Section className="pt-0">
-        <h2 className="text-3xl md:text-4xl font-bold text-center">Strategic partnerships</h2>
+        <h2 className="text-3xl font-bold text-center md:text-4xl">Strategic partnerships</h2>
         <p className="mt-4 text-center text-muted-foreground max-w-2xl mx-auto">
           How we work with vendors, research groups and future partners to deliver at scale.
         </p>
@@ -504,7 +504,7 @@ function Insights() {
 
       {/* Technology statistics */}
       <Section className="pt-0">
-        <h2 className="text-3xl md:text-4xl font-bold text-center">Technology statistics</h2>
+        <h2 className="text-3xl font-bold text-center md:text-4xl">Technology statistics</h2>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {techStats.map((s) => (
             <div key={s.label} className="rounded-3xl border bg-card shadow-card p-7 text-center hover:shadow-glow transition">
@@ -517,7 +517,7 @@ function Insights() {
 
       {/* Client contracts */}
       <Section className="pt-0">
-        <h2 className="text-3xl md:text-4xl font-bold text-center">Client contracts</h2>
+        <h2 className="text-3xl font-bold text-center md:text-4xl">Client contracts</h2>
         <p className="mt-4 text-center text-muted-foreground max-w-2xl mx-auto">
           Sample engagement structures from our current portfolio — client names are anonymised.
         </p>
@@ -595,7 +595,7 @@ function Insights() {
 
       {/* Trends + AI blogs */}
       <Section className="pt-0">
-        <h2 className="text-3xl md:text-4xl font-bold text-center">Technology trends &amp; AI research</h2>
+        <h2 className="text-3xl font-bold text-center md:text-4xl">Technology trends &amp; AI research</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {trends.map((t) => (
             <article

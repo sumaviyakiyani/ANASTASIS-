@@ -22,11 +22,11 @@ const team = [
 ];
 
 const timeline = [
-  { year: "2018", title: "Founded", desc: "Anastasis was born from a research lab with a mission to revive impact through software." },
-  { year: "2020", title: "First 25 clients", desc: "Delivered platforms across health, education and fintech." },
-  { year: "2022", title: "AI division launched", desc: "Dedicated ML/LLM practice serving global teams." },
-  { year: "2024", title: "Global expansion", desc: "Opened partnerships across 3 continents." },
-  { year: "2026", title: "R&D Lab v2", desc: "Anastasis Research Lab launches applied recursion & bio-tech tooling." },
+  { year: "2018", title: "Founded", desc: "Anastasis began as a research-led studio with a mission to revive impact through software." },
+  { year: "2020", title: "First 25 clients", desc: "We delivered platforms across health, education and fintech." },
+  { year: "2022", title: "AI division launched", desc: "Our ML and LLM practice now supports teams around the world." },
+  { year: "2024", title: "Global expansion", desc: "We opened partnerships across three continents." },
+  { year: "2026", title: "R&D Lab v2", desc: "Our research lab now focuses on recursion and applied bio-tech tooling." },
 ];
 
 const values = [
@@ -42,20 +42,20 @@ function About() {
       <PageHero
         eyebrow="About us"
         title="We revive ideas with technology"
-        subtitle="Anastasis (Greek: resurrection) — we bring dormant potential back to life through research, code and craft."
+        subtitle="Anastasis, from Greek for resurrection, brings dormant potential back to life through research, code and craft."
       />
 
       <Section>
         <div className="grid md:grid-cols-2 gap-8">
           {[
-            { icon: Target, t: "Our Mission", d: "To engineer software that solves meaningful problems — from bench research to global-scale platforms." },
-            { icon: Eye, t: "Our Vision", d: "A world where every ambitious idea has a technology partner that can ship it responsibly." },
+            { icon: Target, t: "Our Mission", d: "We build software that solves meaningful problems, from research prototypes to global platforms." },
+            { icon: Eye, t: "Our Vision", d: "Every ambitious idea deserves a technology partner that can ship it responsibly." },
           ].map((b) => (
             <div key={b.t} className="p-10 rounded-3xl neu-card group hover:shadow-glow transition">
               <div className="grid place-items-center h-16 w-16 rounded-2xl bg-gradient-brand text-white shadow-glow group-hover:scale-110 transition-transform">
                 <b.icon size={28} />
               </div>
-              <h3 className="mt-6 text-2xl font-bold">{b.t}</h3>
+              <h3 className="mt-6 text-xl font-bold sm:text-2xl">{b.t}</h3>
               <p className="mt-3 text-muted-foreground leading-relaxed">{b.d}</p>
             </div>
           ))}
@@ -66,14 +66,14 @@ function About() {
       <Section className="bg-muted/40">
         <div className="text-center max-w-2xl mx-auto">
           <span className="text-xs font-semibold tracking-widest uppercase text-brand">The people</span>
-          <h2 className="mt-3 text-4xl md:text-5xl font-bold">
+          <h2 className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">
             Small team, <span className="text-gradient-brand">senior craft</span>
           </h2>
         </div>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {team.map((m) => (
             <div key={m.name} className="group rounded-3xl bg-card p-6 shadow-card hover:shadow-glow hover:-translate-y-2 transition">
-              <div className={`aspect-square rounded-2xl bg-gradient-to-br ${m.tone} grid place-items-center text-white text-5xl font-bold shadow-glow group-hover:scale-[1.02] transition-transform`}>
+              <div className={`aspect-square rounded-2xl bg-gradient-to-br ${m.tone} grid place-items-center text-white text-4xl font-bold shadow-glow transition-transform group-hover:scale-[1.02] sm:text-5xl`}>
                 {m.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
               </div>
               <h3 className="mt-5 text-lg font-bold">{m.name}</h3>
@@ -87,7 +87,7 @@ function About() {
       <Section>
         <div className="text-center max-w-2xl mx-auto">
           <span className="text-xs font-semibold tracking-widest uppercase text-brand">Our journey</span>
-          <h2 className="mt-3 text-4xl md:text-5xl font-bold">A story of <span className="text-gradient-brand">recursion</span></h2>
+          <h2 className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">A story of <span className="text-gradient-brand">recursion</span></h2>
         </div>
         <div className="mt-14 relative">
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand via-brand-dark to-transparent md:-translate-x-1/2" />
@@ -114,7 +114,7 @@ function About() {
         <div className="absolute inset-0 bg-gradient-radial opacity-40" />
         <div className="relative text-center max-w-2xl mx-auto">
           <span className="text-xs font-semibold tracking-widest uppercase text-brand-glow">Core values</span>
-          <h2 className="mt-3 text-4xl md:text-5xl font-bold">What guides <span className="text-gradient-brand">every decision</span></h2>
+          <h2 className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">What guides <span className="text-gradient-brand">every decision</span></h2>
         </div>
         <div className="relative mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((v) => (
