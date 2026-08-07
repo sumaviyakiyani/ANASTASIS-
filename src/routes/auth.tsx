@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Eye, EyeOff, Loader2, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import { z } from "zod";
@@ -7,7 +7,6 @@ import { lovable } from "@/integrations/lovable/index";
 import { useSession } from "@/hooks/useSession";
 import { isDisposableEmail, TEMP_EMAIL_MESSAGE } from "@/lib/disposable-email";
 import { Navbar } from "@/components/SiteLayout";
-import logo from "@/assets/anastasis-logo-mark.png.asset.json";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
@@ -179,18 +178,6 @@ function AuthPage() {
               background: "radial-gradient(circle at 75% 30%, oklch(0.85 0.16 148 / 0.22), transparent 60%)",
             }}
           />
-          <Link to="/" className="flex items-center gap-4">
-            <img src={logo.url} alt="Anastasis Technologies" className="h-16 w-auto sm:h-20" />
-            <span className="min-w-0">
-              <span className="block text-2xl font-extrabold tracking-tight text-brand-dark sm:text-4xl">
-                ANASTASIS
-              </span>
-              <span className="block text-[0.6rem] font-medium tracking-[0.22em] text-ink sm:text-sm">
-                TECHNOLOGIES PVT LTD
-              </span>
-            </span>
-          </Link>
-
           <h1 className="mt-10 text-4xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:mt-14 lg:text-6xl">
             Engineering the <span className="text-brand">resurrection of tech.</span>
           </h1>
