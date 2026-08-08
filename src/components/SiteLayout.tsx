@@ -34,8 +34,10 @@ export function Navbar({ logoSrc }: { logoSrc?: string }) {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass-dark shadow-elegant" : "bg-transparent"
+      className={`fixed top-0 inset-x-0 z-50 border-b border-brand/10 backdrop-blur-xl transition-all duration-300 ${
+        scrolled
+          ? "bg-[linear-gradient(135deg,oklch(0.995_0.008_95/0.96)_0%,oklch(0.97_0.015_100/0.94)_100%)] shadow-[0_10px_35px_-20px_oklch(0.45_0.05_150/0.16)]"
+          : "bg-[linear-gradient(135deg,oklch(0.998_0.004_95/0.9)_0%,oklch(0.973_0.012_100/0.86)_100%)]"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
@@ -93,7 +95,7 @@ export function Navbar({ logoSrc }: { logoSrc?: string }) {
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden rounded-lg p-2 text-ink glass-dark"
+          className="lg:hidden rounded-lg border border-brand/10 bg-[linear-gradient(135deg,oklch(0.995_0.008_95/0.96)_0%,oklch(0.97_0.015_100/0.94)_100%)] p-2 text-ink shadow-sm backdrop-blur"
           aria-label="Toggle menu"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
@@ -101,7 +103,7 @@ export function Navbar({ logoSrc }: { logoSrc?: string }) {
       </div>
 
       {open && (
-        <div className="lg:hidden glass-dark border-t border-brand/20 animate-fade-up">
+        <div className="lg:hidden border-t border-brand/10 bg-[linear-gradient(135deg,oklch(0.995_0.008_95/0.96)_0%,oklch(0.97_0.015_100/0.94)_100%)] animate-fade-up backdrop-blur-xl">
 
           <div className="mx-auto flex max-h-[70vh] max-w-7xl flex-col gap-1 overflow-y-auto px-4 py-4 sm:px-6">
             {nav.map((n) => (
