@@ -12,7 +12,7 @@ import { getMyProfile, setPlan, updateMyName } from "@/lib/plan.functions";
 export const Route = createFileRoute("/_authenticated/account")({
   head: () => ({
     meta: [
-      { title: "Your account — Anastasis Technologies" },
+      { title: "Your account | Anastasis Technologies" },
       { name: "description", content: "Manage your profile, plan and account security settings." },
       { property: "og:title", content: "Your account · Anastasis Technologies" },
       { property: "og:description", content: "Manage your profile and plan." },

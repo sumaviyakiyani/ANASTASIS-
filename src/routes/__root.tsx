@@ -11,6 +11,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { WhatsAppButton } from "../components/WhatsAppButton";
+
 
 function NotFoundComponent() {
   return (
@@ -77,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Anastasis Technologies — Research-Driven Software Solutions" },
+      { title: "Anastasis Technologies | Research-Driven Software Solutions" },
       {
         name: "description",
         content:
           "Anastasis Technologies Pvt Ltd builds research-driven software, AI, web and mobile solutions. Research · Innovation · Recursion · Revival · Impact.",
       },
       { name: "author", content: "Anastasis Technologies" },
-      { property: "og:title", content: "Anastasis Technologies — Research-Driven Software Solutions" },
+      { property: "og:title", content: "Anastasis Technologies | Research-Driven Software Solutions" },
       {
         property: "og:description",
         content:
@@ -92,7 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Anastasis Technologies — Research-Driven Software Solutions" },
+      { name: "twitter:title", content: "Anastasis Technologies | Research-Driven Software Solutions" },
       { name: "twitter:description", content: "Anastasis Technologies Pvt Ltd builds research-driven software, AI, web and mobile solutions. Research · Innovation · Recursion · Revival · Impact." },
       { property: "og:image", content: "https://cdn.gpteng.co/blank-app-v1.svg" },
       { name: "twitter:image", content: "https://cdn.gpteng.co/blank-app-v1.svg" },
@@ -135,6 +137,8 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <WhatsAppButton />
     </QueryClientProvider>
   );
 }
+

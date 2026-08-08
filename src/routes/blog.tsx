@@ -22,7 +22,7 @@ import { SiteLayout, Section, PageHero } from "@/components/SiteLayout";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Insights — Portfolio, Research, Partnerships & Trends | Anastasis" },
+      { title: "Insights | Portfolio, Research, Partnerships & Trends | Anastasis" },
       {
         name: "description",
         content:
@@ -49,7 +49,7 @@ const news = [
     title: "New research and delivery hub opens in Islamabad",
     date: "Jul 28, 2026",
     read: "3 min",
-    body: "A dedicated lab space for automation and applied AI work is now doubling our delivery capacity for enterprise programs.",
+    body: "A dedicated lab space for automation and applied AI work, doubling our delivery capacity for enterprise programs.",
   },
   {
     icon: Lightbulb,
@@ -57,7 +57,7 @@ const news = [
     title: "Autonomous delivery pipeline reaches production maturity",
     date: "Jul 09, 2026",
     read: "5 min",
-    body: "Our internal loop now plans, builds, tests and ships increments with human review at key decision gates.",
+    body: "Our internal loop now plans, builds, tests and ships increments with human review only at decision gates.",
   },
   {
     icon: ScrollText,
@@ -65,7 +65,7 @@ const news = [
     title: "Recursion in production ML pipelines",
     date: "Jun 10, 2026",
     read: "6 min",
-    body: "Practical patterns and trade-offs for self-referential training loops that remain observable and safe.",
+    body: "Practical patterns and trade-offs for self-referential training loops that stay observable and safe.",
   },
 ];
 
@@ -303,7 +303,7 @@ function Insights() {
               Featured · {featured.tag}
             </div>
           </div>
-          <div className="p-10">
+          <div className="p-6 sm:p-8 lg:p-10">
             <div className="flex items-center gap-4 text-xs text-muted-foreground">
               <span className="flex items-center gap-1">
                 <Calendar size={14} /> {featured.date}
@@ -312,7 +312,7 @@ function Insights() {
                 <Clock size={14} /> {featured.read}
               </span>
             </div>
-            <h2 className="mt-4 text-3xl md:text-4xl font-bold group-hover:text-brand transition">{featured.title}</h2>
+            <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-bold group-hover:text-brand transition">{featured.title}</h2>
             <p className="mt-4 text-muted-foreground">{featured.body}</p>
             <Link
               to="/contact"
@@ -323,21 +323,23 @@ function Insights() {
           </div>
         </article>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 md:mt-12">
           {rest.map((n) => (
             <article
               key={n.title}
-              className="group rounded-3xl bg-card border shadow-card p-7 hover:shadow-glow hover:-translate-y-1 transition"
+              className="group rounded-3xl bg-card border shadow-card p-6 hover:shadow-glow hover:-translate-y-1 transition sm:p-7"
             >
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-brand/12 text-brand-dark">
-                <n.icon size={18} />
-              </span>
-              <span className="mt-4 inline-block rounded-full border border-brand/20 bg-brand/8 px-3 py-1 text-xs font-semibold text-brand-dark">
-                {n.tag}
-              </span>
-              <h3 className="mt-3 text-xl font-bold group-hover:text-brand transition">{n.title}</h3>
+              <div className="flex items-center gap-3">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-brand/12 text-brand-dark">
+                  <n.icon size={18} />
+                </span>
+                <span className="inline-flex min-w-0 items-center rounded-full border border-brand/20 bg-brand/8 px-3 py-1 text-xs font-semibold text-brand-dark">
+                  <span className="truncate">{n.tag}</span>
+                </span>
+              </div>
+              <h3 className="mt-4 text-lg font-bold group-hover:text-brand transition sm:text-xl">{n.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{n.body}</p>
-              <div className="mt-4 flex items-center gap-4 text-xs text-muted-foreground">
+              <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
                 <span className="flex items-center gap-1">
                   <Calendar size={14} /> {n.date}
                 </span>
@@ -348,11 +350,12 @@ function Insights() {
             </article>
           ))}
         </div>
+
       </Section>
 
       {/* Project Portfolio & Innovation (moved from Portfolio) */}
       <Section className="pt-0">
-        <h2 className="text-3xl font-bold text-center md:text-4xl">Project Portfolio &amp; Innovation</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">Project Portfolio &amp; Innovation</h2>
         <h3 className="mt-8 text-2xl md:text-3xl font-bold text-center">Project categories</h3>
         <div className="flex flex-wrap justify-center gap-2 mt-8 mb-10">
           {cats.map((c) => (
@@ -423,29 +426,32 @@ function Insights() {
 
       {/* Industry insights */}
       <Section className="pt-0">
-        <h2 className="text-3xl font-bold text-center md:text-4xl">Industry insights</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">Industry insights</h2>
         <p className="mt-4 text-center text-muted-foreground max-w-2xl mx-auto">
           What we are seeing across the sectors we build in.
         </p>
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {industryInsights.map((i) => (
-            <article key={i.title} className="rounded-3xl bg-card border shadow-card p-7 hover:shadow-glow transition">
-              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-brand/12 text-brand-dark">
-                <i.icon size={20} />
-              </span>
-              <span className="mt-4 inline-block rounded-full border border-brand/20 bg-brand/8 px-3 py-1 text-xs font-semibold text-brand-dark">
-                {i.sector}
-              </span>
-              <h3 className="mt-3 text-xl font-bold">{i.title}</h3>
+            <article key={i.title} className="rounded-3xl bg-card border shadow-card p-6 hover:shadow-glow transition sm:p-7">
+              <div className="flex items-center gap-3">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-brand/12 text-brand-dark">
+                  <i.icon size={20} />
+                </span>
+                <span className="inline-flex min-w-0 items-center rounded-full border border-brand/20 bg-brand/8 px-3 py-1 text-xs font-semibold text-brand-dark">
+                  <span className="truncate">{i.sector}</span>
+                </span>
+              </div>
+              <h3 className="mt-4 text-lg font-bold sm:text-xl">{i.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{i.body}</p>
             </article>
           ))}
         </div>
       </Section>
 
+
       {/* Research & innovation */}
       <Section className="pt-0">
-        <h2 className="text-3xl font-bold text-center md:text-4xl">Research &amp; innovation</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">Research &amp; innovation</h2>
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {research.map((r) => (
             <div key={r.title} className="rounded-3xl bg-card border shadow-card p-7 hover:shadow-glow transition">
@@ -461,7 +467,7 @@ function Insights() {
 
       {/* Partnerships */}
       <Section className="pt-0">
-        <h2 className="text-3xl font-bold text-center md:text-4xl">Strategic partnerships</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">Strategic partnerships</h2>
         <p className="mt-4 text-center text-muted-foreground max-w-2xl mx-auto">
           How we work with vendors, research groups and future partners to deliver at scale.
         </p>
@@ -488,7 +494,7 @@ function Insights() {
 
       {/* Future collaborations */}
       <Section className="pt-0">
-        <h2 className="text-3xl md:text-4xl font-bold text-center">Future collaborations</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">Future collaborations</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {futureCollaborations.map((f) => (
             <div key={f.title} className="rounded-3xl bg-card border shadow-card p-6 hover:shadow-glow transition">
@@ -504,7 +510,7 @@ function Insights() {
 
       {/* Technology statistics */}
       <Section className="pt-0">
-        <h2 className="text-3xl font-bold text-center md:text-4xl">Technology statistics</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">Technology statistics</h2>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {techStats.map((s) => (
             <div key={s.label} className="rounded-3xl border bg-card shadow-card p-7 text-center hover:shadow-glow transition">
@@ -517,9 +523,9 @@ function Insights() {
 
       {/* Client contracts */}
       <Section className="pt-0">
-        <h2 className="text-3xl font-bold text-center md:text-4xl">Client contracts</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">Client contracts</h2>
         <p className="mt-4 text-center text-muted-foreground max-w-2xl mx-auto">
-          Sample engagement structures from our current portfolio — client names are anonymised.
+          Sample engagement structures from our current portfolio, with client names anonymised.
         </p>
         <div className="mt-10 overflow-x-auto rounded-3xl border bg-card shadow-card">
           <table className="w-full min-w-[640px] text-left text-sm">
@@ -558,7 +564,7 @@ function Insights() {
             </span>
             <h2 className="mt-5 text-3xl font-bold">Company vision</h2>
             <p className="mt-4 text-muted-foreground">
-              Build software that rebuilds industries — research-led, automation-first and delivered by small teams
+              Build software that rebuilds industries: research-led, automation-first and delivered by small teams
               with outsized leverage. Every engagement should leave the client with systems that keep improving after
               we hand them over.
             </p>
@@ -595,25 +601,28 @@ function Insights() {
 
       {/* Trends + AI blogs */}
       <Section className="pt-0">
-        <h2 className="text-3xl font-bold text-center md:text-4xl">Technology trends &amp; AI research</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">Technology trends &amp; AI research</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {trends.map((t) => (
             <article
               key={t.title}
               className="group rounded-3xl bg-card border shadow-card p-6 hover:shadow-glow hover:-translate-y-1 transition"
             >
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand/12 text-brand-dark">
-                <LineChart size={16} />
-              </span>
-              <span className="mt-4 inline-block rounded-full border border-brand/20 bg-brand/8 px-3 py-1 text-xs font-semibold text-brand-dark">
-                {t.cat}
-              </span>
-              <h3 className="mt-3 text-lg font-bold group-hover:text-brand transition">{t.title}</h3>
+              <div className="flex items-center gap-3">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand/12 text-brand-dark">
+                  <LineChart size={16} />
+                </span>
+                <span className="inline-flex min-w-0 items-center rounded-full border border-brand/20 bg-brand/8 px-3 py-1 text-xs font-semibold text-brand-dark">
+                  <span className="truncate">{t.cat}</span>
+                </span>
+              </div>
+              <h3 className="mt-4 text-base font-bold group-hover:text-brand transition sm:text-lg">{t.title}</h3>
               <Link to="/contact" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand">
                 Discuss this <ArrowRight size={14} />
               </Link>
             </article>
           ))}
+
         </div>
       </Section>
     </SiteLayout>

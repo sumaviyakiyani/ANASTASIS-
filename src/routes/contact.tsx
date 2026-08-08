@@ -7,7 +7,7 @@ import { SiteLayout, Section, PageHero } from "@/components/SiteLayout";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Anastasis Technologies" },
+      { title: "Contact | Anastasis Technologies" },
       { name: "description", content: "Get in touch with Anastasis Technologies and start your project today." },
       { property: "og:title", content: "Contact · Anastasis Technologies" },
       { property: "og:description", content: "Talk to our team about your next project." },
@@ -52,7 +52,7 @@ function Contact() {
         <div className="grid lg:grid-cols-5 gap-8">
           {/* Info card */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="p-8 rounded-3xl bg-gradient-dark text-ink shadow-elegant relative overflow-hidden">
+            <div className="p-6 sm:p-8 rounded-3xl bg-gradient-dark text-ink shadow-elegant relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-radial opacity-50" />
               <div className="relative space-y-5">
                 <h3 className="text-2xl font-bold">Reach us directly</h3>
@@ -92,7 +92,7 @@ function Contact() {
           </div>
 
           {/* Form */}
-          <form onSubmit={onSubmit} className="lg:col-span-3 p-8 md:p-10 rounded-3xl bg-card border shadow-elegant space-y-5">
+          <form onSubmit={onSubmit} className="lg:col-span-3 p-6 sm:p-8 md:p-10 rounded-3xl bg-card border shadow-elegant space-y-5">
             <h3 className="text-2xl font-bold">Send us a message</h3>
 
             <div>
@@ -130,8 +130,8 @@ function Contact() {
 
             {error && <div className="text-sm text-destructive">{error}</div>}
             {sent && (
-              <div className="flex items-center gap-2 text-sm font-semibold text-brand">
-                <CheckCircle2 size={18} /> Message sent. We will be in touch soon.
+              <div className="flex items-center gap-2 text-sm text-brand font-semibold">
+                <CheckCircle2 size={18} /> Message sent. We'll be in touch soon.
               </div>
             )}
 

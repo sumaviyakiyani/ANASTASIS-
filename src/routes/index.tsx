@@ -14,11 +14,13 @@ import {
   Users,
 } from "lucide-react";
 import { SiteLayout, Section } from "@/components/SiteLayout";
+import { SecurityAssurance } from "@/components/SecurityAssurance";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Anastasis Technologies — Research-Driven Software Solutions" },
+      { title: "Anastasis Technologies | Research-Driven Software Solutions" },
       { property: "og:image", content: "https://cdn.gpteng.co/blank-app-v1.svg" },
     ],
   }),
@@ -77,17 +79,20 @@ function HomePage() {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="relative flex min-h-screen items-center overflow-hidden bg-gradient-dark px-4 pt-24 text-ink sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
+      <section className="relative min-h-screen flex items-center bg-gradient-dark text-ink overflow-hidden pt-24">
         <div className="absolute inset-0 bg-gradient-radial opacity-70" />
         <div className="absolute top-20 -left-20 h-96 w-96 rounded-full bg-brand/30 blur-3xl animate-pulse-glow" />
         <div className="absolute bottom-10 right-0 h-80 w-80 rounded-full bg-brand-dark/40 blur-3xl" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-0 py-16 sm:gap-10 sm:py-20 lg:grid-cols-2 lg:gap-12 lg:px-0">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-2 lg:gap-12">
           <div className="animate-fade-up">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-dark text-xs font-medium tracking-widest uppercase text-black">
-              <Sparkles size={14} /> Research · Innovation · Impact
+            <span
+              className="inline-flex max-w-full items-center gap-2 rounded-full glass-dark px-4 py-1.5 text-[0.65rem] font-medium uppercase tracking-widest sm:text-xs"
+              style={{ color: "#000000" }}
+            >
+              <Sparkles size={14} className="shrink-0" /> Research · Innovation · Impact
             </span>
-            <h2 className="mt-6 text-4xl font-extrabold leading-[0.95] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+            <h2 className="mt-6 text-4xl font-extrabold leading-[1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
               <span
                 className="bg-clip-text text-transparent drop-shadow-[0_2px_20px_rgba(26,122,60,0.25)]"
                 style={{ backgroundImage: "linear-gradient(135deg, #0f5132 0%, #1a7a3c 45%, #2ecc71 100%)" }}
@@ -95,14 +100,15 @@ function HomePage() {
                 No More Employees
               </span>
             </h2>
-            <h1 className="mt-5 text-2xl font-bold leading-[1.1] text-ink/90 sm:text-3xl md:text-4xl lg:text-5xl">
+            <h1 className="mt-5 text-2xl font-bold leading-[1.15] text-ink/90 sm:text-3xl md:text-5xl">
               Engineering <span className="text-gradient-brand">tomorrow's</span> software today
             </h1>
             <p className="mt-6 max-w-xl text-base text-ink/70 sm:text-lg">
-              We fuse applied research, AI and modern engineering to build automation-first products —
-              replacing manual work with intelligent systems that deliver measurable impact.
+              We combine applied research, AI and modern engineering to build automation-first products that
+              replace manual work with intelligent systems and deliver measurable impact.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
+
               <Link
                 to="/contact"
                 className="group inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 font-semibold shadow-glow transition-transform hover:scale-105 sm:px-7 sm:py-3.5"
@@ -132,23 +138,24 @@ function HomePage() {
           </div>
 
           <div className="relative animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            <div className="relative max-w-lg mx-auto">
-              <div className="absolute inset-0 bg-gradient-brand rounded-[3rem] blur-3xl opacity-40 animate-pulse-glow" />
-              <div className="relative animate-float rounded-[3rem] glass-dark p-6 sm:p-8 md:p-10">
+            <div className="relative mx-auto w-full max-w-lg">
+              <div className="absolute inset-0 bg-gradient-brand rounded-[2rem] blur-3xl opacity-40 animate-pulse-glow sm:rounded-[3rem]" />
+              <div className="relative glass-dark rounded-[2rem] p-6 animate-float sm:p-8 md:rounded-[3rem] md:p-10">
                 <div className="flex items-center gap-3">
-                  <div className="grid place-items-center h-11 w-11 rounded-2xl bg-gradient-brand text-white shadow-glow">
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-gradient-brand text-white shadow-glow">
                     <Brain size={20} />
                   </div>
-                  <div>
-                    <div className="text-xs uppercase tracking-widest text-brand-glow">Autonomous Delivery</div>
-                    <div className="text-lg font-bold leading-tight">AI-Run Engineering</div>
+                  <div className="min-w-0">
+                    <div className="text-[0.65rem] uppercase tracking-widest text-brand-dark sm:text-xs">Autonomous Delivery</div>
+                    <div className="text-base font-bold leading-tight sm:text-lg">AI-Run Engineering</div>
                   </div>
                 </div>
 
-                <p className="mt-4 text-sm text-ink/70 leading-relaxed">
-                  Intelligent agents plan, build and ship — while humans stay on strategy. From data
-                  pipelines to production releases, the loop keeps running without hiring more hands.
+                <p className="mt-4 text-sm leading-relaxed text-ink/70">
+                  Intelligent agents plan, build and ship while humans stay on strategy. From data pipelines to
+                  production releases, the loop keeps running without hiring more hands.
                 </p>
+
 
                 {/* Neural / automation flow illustration */}
                 <svg viewBox="0 0 320 140" className="mt-6 w-full h-auto" role="img" aria-label="AI automation workflow diagram">
@@ -182,7 +189,7 @@ function HomePage() {
                   ))}
                 </svg>
 
-                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                <div className="mt-6 grid grid-cols-3 gap-3">
                   {[
                     { icon: Zap, label: "Automation" },
                     { icon: Code2, label: "Engineering" },
@@ -204,9 +211,9 @@ function HomePage() {
 
       {/* Partners strip */}
       <div className="border-y bg-muted/50">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-around gap-x-6 gap-y-4 px-4 py-8 sm:px-6 sm:gap-x-10">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-6 gap-y-4 px-4 py-8 sm:px-6 sm:justify-around sm:gap-x-10">
           {partners.map((p) => (
-            <div key={p} className="text-sm font-bold tracking-[0.2em] text-muted-foreground/70 hover:text-brand transition">
+            <div key={p} className="text-xs font-bold tracking-[0.2em] text-muted-foreground/70 transition hover:text-brand sm:text-sm">
               {p}
             </div>
           ))}
@@ -215,17 +222,17 @@ function HomePage() {
 
       {/* Services overview */}
       <Section>
-        <div className="text-center max-w-2xl mx-auto">
-          <span className="text-xs font-semibold tracking-widest uppercase text-brand">What we do</span>
-          <h2 className="mt-3 text-4xl md:text-5xl font-bold">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="text-xs font-semibold uppercase tracking-widest text-brand">What we do</span>
+          <h2 className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">
             Solutions that <span className="text-gradient-brand">move you forward</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">
-            From research prototypes to production-grade platforms — a full-stack technology partner.
+          <p className="mt-4 text-sm text-muted-foreground sm:text-base">
+            From research prototypes to production-grade platforms, we work as your full-stack technology partner.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 md:mt-14">
           {services.map((s, i) => (
             <div
               key={s.title}
@@ -237,7 +244,7 @@ function HomePage() {
                 <div className="inline-grid place-items-center h-14 w-14 rounded-2xl bg-gradient-brand text-white shadow-glow group-hover:scale-110 transition-transform">
                   <s.icon size={26} />
                 </div>
-                <h3 className="mt-5 text-xl font-bold group-hover:text-white transition-colors">{s.title}</h3>
+                <h3 className="mt-5 text-lg font-bold transition-colors group-hover:text-white sm:text-xl">{s.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground group-hover:text-ink/90 transition-colors">
                   {s.desc}
                 </p>
@@ -247,31 +254,32 @@ function HomePage() {
         </div>
       </Section>
 
+
       {/* Why choose us */}
       <Section className="bg-gradient-dark text-ink relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-radial opacity-40" />
-        <div className="relative grid lg:grid-cols-2 gap-16 items-center">
+        <div className="relative grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
-            <span className="text-xs font-semibold tracking-widest uppercase text-brand-glow">Why work with us</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-brand-dark">Why work with us</span>
             <h2 className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">
               A partner obsessed with <span className="text-gradient-brand">outcomes</span>
             </h2>
-            <p className="mt-4 text-ink/70">
-              We combine deep research with pragmatic engineering — so every line of code we ship
-              connects to a measurable business result.
+            <p className="mt-4 text-sm text-ink/70 sm:text-base">
+              We combine deep research with pragmatic engineering, so every line of code we ship connects to a
+              measurable business result.
             </p>
 
             <div className="mt-8 space-y-4">
               {[
-                { icon: Shield, t: "Secure by default", d: "Enterprise-grade practices baked into every build." },
+                { icon: Shield, t: "Secure by default", d: "Secure engineering practices applied to every build." },
                 { icon: Zap, t: "Fast to value", d: "Weekly delivery cadence with measurable milestones." },
-                { icon: Users, t: "Senior team", d: "Small, senior squads — no hand-offs, no juniors on the wheel." },
+                { icon: Users, t: "Senior team", d: "Small, senior squads with no hand-offs and no juniors on the wheel." },
               ].map((f) => (
                 <div key={f.t} className="flex items-start gap-4 rounded-2xl glass-dark p-4 transition hover:bg-brand/10">
-                  <div className="grid place-items-center h-11 w-11 rounded-xl bg-gradient-brand shrink-0">
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-brand">
                     <f.icon size={20} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="font-semibold">{f.t}</div>
                     <div className="text-sm text-ink/70">{f.d}</div>
                   </div>
@@ -280,34 +288,36 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid grid-cols-2 gap-4 sm:gap-5">
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="rounded-3xl glass-dark p-6 text-center transition-transform hover:scale-105 sm:p-8"
+                className="glass-dark rounded-3xl p-5 text-center transition-transform hover:scale-105 sm:p-8"
               >
-                <div className="text-4xl font-bold text-gradient-brand sm:text-5xl">
+                <div className="text-3xl font-bold text-gradient-brand sm:text-4xl md:text-5xl">
                   <Counter value={s.value} suffix={s.suffix} />
                 </div>
-                <div className="mt-2 text-sm uppercase tracking-widest text-ink/60">{s.label}</div>
+                <div className="mt-2 text-[0.7rem] uppercase tracking-widest text-ink/60 sm:text-sm">{s.label}</div>
               </div>
             ))}
           </div>
         </div>
       </Section>
 
+      <SecurityAssurance />
+
       {/* CTA */}
       <Section>
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-brand p-12 md:p-20 text-center text-white shadow-glow">
+        <div className="relative overflow-hidden rounded-[2rem] bg-gradient-brand p-8 text-center text-white shadow-glow sm:rounded-[2.5rem] sm:p-12 md:p-20">
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_20%_20%,white,transparent_50%)]" />
           <div className="relative">
-            <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">Have a bold idea? Let's build it.</h2>
-            <p className="mt-4 text-ink/90 max-w-xl mx-auto">
+            <h2 className="text-2xl font-bold sm:text-4xl md:text-5xl">Have a bold idea? Let's build it.</h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm text-ink/90 sm:text-base">
               Book a free discovery call and turn your vision into a shipping product.
             </p>
             <Link
               to="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 font-semibold hover:bg-white hover:text-ink transition"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 font-semibold transition hover:bg-white hover:text-ink sm:px-8 sm:py-4"
             >
               Start Your Project <ArrowRight size={18} />
             </Link>
@@ -315,5 +325,6 @@ function HomePage() {
         </div>
       </Section>
     </SiteLayout>
+
   );
 }

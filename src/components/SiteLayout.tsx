@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { Menu, X, Mail, Phone, MapPin, Linkedin, Twitter, Github, Facebook, UserCircle } from "lucide-react";
-import logo from "@/assets/LOGO.png";
+import logo from "@/assets/anastasis-logo-mark.png.asset.json";
 import { useSession } from "@/hooks/useSession";
 
 const nav = [
@@ -37,10 +37,11 @@ export function Navbar() {
         scrolled ? "glass-dark shadow-elegant" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
-        <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img src={logo} alt="Anastasis Technologies" className="h-8 w-auto sm:h-10" />
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
+        <Link to="/" className="flex shrink-0 items-center gap-2">
+          <img src={logo.url} alt="Anastasis Technologies" className="h-9 w-auto sm:h-10" />
         </Link>
+
 
         <nav className="hidden lg:flex items-center gap-1">
           {nav.map((n) => {
@@ -97,7 +98,7 @@ export function Navbar() {
       {open && (
         <div className="lg:hidden glass-dark border-t border-brand/20 animate-fade-up">
 
-          <div className="mx-auto max-w-7xl px-4 py-4 flex flex-col gap-1 sm:px-6">
+          <div className="mx-auto flex max-h-[70vh] max-w-7xl flex-col gap-1 overflow-y-auto px-4 py-4 sm:px-6">
             {nav.map((n) => (
               <Link
                 key={n.to}
@@ -131,9 +132,9 @@ function Footer() {
   return (
     <footer className="relative mt-24 bg-gradient-dark text-ink/80 border-t border-brand/20">
       <div className="absolute inset-0 bg-gradient-radial opacity-40 pointer-events-none" />
-      <div className="relative mx-auto max-w-7xl px-4 py-16 grid gap-10 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 md:py-16 lg:grid-cols-4">
         <div>
-          <img src={logo} alt="Anastasis" className="h-12 w-auto" />
+          <img src={logo.url} alt="Anastasis" className="h-12 w-auto" />
           <p className="mt-4 text-sm text-ink/60 leading-relaxed">
             Research · Innovation · Recursion · Revival · Impact. Building tomorrow's software today.
           </p>
@@ -156,9 +157,10 @@ function Footer() {
           <h4 className="text-ink font-semibold mb-4">Contact</h4>
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2"><MapPin size={16} className="mt-0.5 text-brand-dark shrink-0" /> Islamabad, Pakistan</li>
-            <li className="flex items-center gap-2"><Mail size={16} className="text-brand-dark shrink-0" /> hello@anastasis.tech</li>
-            <li className="flex items-center gap-2"><Phone size={16} className="text-brand-dark shrink-0" /> +92 300 000 0000</li>
+            <li className="flex items-center gap-2 min-w-0"><Mail size={16} className="text-brand-dark shrink-0" /> <span className="truncate">hello@anastasis.tech</span></li>
+            <li className="flex items-center gap-2"><Phone size={16} className="text-brand-dark shrink-0" /> +92 370 880 8903</li>
           </ul>
+
         </div>
 
         <div>
@@ -178,7 +180,7 @@ function Footer() {
         </div>
       </div>
       <div className="relative border-t border-brand/20">
-        <div className="mx-auto max-w-7xl px-4 py-5 text-xs text-ink/60 flex flex-wrap gap-2 justify-between sm:px-6">
+        <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-2 px-4 py-5 text-xs text-ink/60 sm:px-6">
           <span>© {new Date().getFullYear()} Anastasis Technologies Pvt Ltd. All rights reserved.</span>
           <span>Research | Innovation | Recursion | Revival | Impact</span>
         </div>
@@ -189,7 +191,7 @@ function Footer() {
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden">
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Navbar />
       <main className="flex-1">{children}</main>
       <Footer />
@@ -207,7 +209,7 @@ export function Section({
   id?: string;
 }) {
   return (
-    <section id={id} className={`px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24 ${className}`}>
+    <section id={id} className={`px-4 py-16 sm:px-6 sm:py-20 md:py-28 ${className}`}>
       <div className="mx-auto max-w-7xl">{children}</div>
     </section>
   );
@@ -223,12 +225,12 @@ export function PageHero({
   subtitle?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-gradient-dark px-4 pb-16 pt-24 text-ink sm:px-6 sm:pb-20 sm:pt-28 lg:px-8 lg:pb-24 lg:pt-32">
+    <section className="relative overflow-hidden bg-gradient-dark px-4 pb-16 pt-32 text-ink sm:px-6 sm:pt-36 md:pb-20 lg:pt-40">
       <div className="absolute inset-0 bg-gradient-radial opacity-60" />
-      <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-brand/20 blur-3xl" />
+      <div className="absolute -top-32 -right-32 h-72 w-72 rounded-full bg-brand/20 blur-3xl sm:h-96 sm:w-96" />
       <div className="relative mx-auto max-w-4xl text-center animate-fade-up">
         {eyebrow && (
-          <span className="inline-block px-4 py-1.5 rounded-full glass-dark text-xs font-medium tracking-widest uppercase text-brand-dark">
+          <span className="inline-block rounded-full glass-dark px-4 py-1.5 text-[0.65rem] font-medium uppercase tracking-widest text-brand-dark sm:text-xs">
             {eyebrow}
           </span>
         )}
@@ -240,3 +242,4 @@ export function PageHero({
     </section>
   );
 }
+

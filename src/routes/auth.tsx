@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Eye, EyeOff, Loader2, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import { z } from "zod";
@@ -7,11 +7,12 @@ import { lovable } from "@/integrations/lovable/index";
 import { useSession } from "@/hooks/useSession";
 import { isDisposableEmail, TEMP_EMAIL_MESSAGE } from "@/lib/disposable-email";
 import { Navbar } from "@/components/SiteLayout";
+import logo from "@/assets/anastasis-logo-mark.png.asset.json";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Sign in or create an account — Anastasis Technologies" },
+      { title: "Sign in or create an account | Anastasis Technologies" },
       {
         name: "description",
         content:
@@ -171,41 +172,47 @@ function AuthPage() {
       <Navbar />
       <main className="relative min-h-screen w-full overflow-hidden bg-background lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
         {/* Left column */}
-        <section className="relative z-10 flex flex-col justify-center px-4 pb-14 pt-24 sm:px-6 sm:pb-16 sm:pt-28 lg:px-8 lg:pb-20 lg:pt-32">
+        <section className="relative z-10 flex flex-col justify-center px-4 pb-12 pt-28 sm:px-10 lg:px-16 lg:pb-20 lg:pt-32">
           <div
             className="pointer-events-none absolute inset-0 -z-10"
             style={{
               background: "radial-gradient(circle at 75% 30%, oklch(0.85 0.16 148 / 0.22), transparent 60%)",
             }}
           />
-          <h1 className="mt-10 text-3xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-4xl lg:mt-14 lg:text-5xl xl:text-6xl">
-            Building dependable <span className="text-brand">technology with lasting impact.</span>
+          <Link to="/" className="flex items-center gap-4">
+            <img src={logo.url} alt="Anastasis Technologies" className="h-14 w-auto sm:h-20" />
+          </Link>
+
+          <h1 className="mt-8 text-3xl font-extrabold leading-[1.1] tracking-tight text-ink sm:text-5xl lg:mt-14 lg:text-6xl">
+            Engineering the <span className="text-brand">resurrection of tech.</span>
           </h1>
 
-          <p className="mt-6 max-w-lg text-base leading-relaxed text-ink-soft sm:text-lg">
-            Anastasis Technologies Pvt Ltd builds dependable digital systems that are secure, fast and easy to use.
+          <p className="mt-5 max-w-lg text-sm leading-relaxed text-ink-soft sm:mt-6 sm:text-lg">
+            Anastasis Technologies Pvt Ltd crafts premium digital systems where minimalism meets depth: secure,
+            fast and beautifully human.
           </p>
 
-          <div className="mt-10 max-w-xl space-y-4">
+          <div className="mt-8 max-w-xl space-y-3 sm:mt-10 sm:space-y-4">
             {features.map(({ icon: Icon, title, body }) => (
               <div
                 key={title}
-                className="flex items-center gap-4 rounded-2xl border border-brand/15 bg-card/70 px-4 py-4 shadow-card backdrop-blur-md sm:px-5"
+                className="flex items-center gap-3 rounded-2xl border border-brand/15 bg-card/70 px-4 py-3.5 shadow-card backdrop-blur-md sm:gap-4 sm:px-5 sm:py-4"
               >
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand/12 text-brand-dark">
                   <Icon size={18} />
                 </span>
                 <span className="min-w-0">
-                  <span className="block font-semibold text-ink">{title}</span>
-                  <span className="block text-sm text-ink-soft">{body}</span>
+                  <span className="block text-sm font-semibold text-ink sm:text-base">{title}</span>
+                  <span className="block text-xs text-ink-soft sm:text-sm">{body}</span>
                 </span>
               </div>
             ))}
           </div>
         </section>
 
+
         {/* Right column */}
-        <section className="relative flex items-center justify-center px-4 pb-14 pt-14 sm:px-6 lg:px-8 lg:pb-20 lg:pt-32">
+        <section className="relative flex items-center justify-center px-4 pb-14 pt-12 sm:px-10 lg:px-16 lg:pb-20 lg:pt-32">
           <div
             className="pointer-events-none absolute inset-0"
             style={{
@@ -223,7 +230,7 @@ function AuthPage() {
             }}
           />
 
-          <div className="relative z-10 w-full max-w-md rounded-[2rem] border border-white/50 bg-white/55 p-6 shadow-glow backdrop-blur-2xl sm:p-8 md:p-9">
+          <div className="relative z-10 w-full max-w-md rounded-[1.5rem] border border-white/50 bg-white/55 p-5 shadow-glow backdrop-blur-2xl sm:rounded-[2rem] sm:p-9">
             <div className="grid grid-cols-2 gap-1 rounded-2xl bg-white/60 p-1">
               {(["signin", "signup"] as const).map((t) => (
                 <button
@@ -243,7 +250,7 @@ function AuthPage() {
               ))}
             </div>
 
-            <h2 className="mt-6 text-xl font-bold leading-tight tracking-tight text-ink sm:text-2xl">
+            <h2 className="mt-6 text-2xl font-bold leading-tight tracking-tight text-ink sm:text-[1.75rem]">
               {tab === "signin" ? "Continue to your account" : "Create your account"}
             </h2>
 
@@ -322,10 +329,12 @@ function AuthPage() {
                   type="button"
                   onClick={() => signIn(p.id)}
                   disabled={busy !== null}
-                  className="inline-flex w-full items-center justify-center gap-3 rounded-2xl border border-white/70 bg-card px-4 py-3.5 font-semibold text-ink shadow-card transition hover:bg-brand/5 disabled:opacity-60"
+                  className="inline-flex w-full items-center justify-center gap-2.5 rounded-2xl border border-white/70 bg-card px-3 py-3.5 text-sm font-semibold text-ink shadow-card transition hover:bg-brand/5 disabled:opacity-60 sm:gap-3 sm:px-4 sm:text-base"
                 >
-                  {busy === p.id ? <Loader2 size={18} className="animate-spin" /> : p.icon}
-                  {p.label}
+                  <span className="shrink-0">
+                    {busy === p.id ? <Loader2 size={18} className="animate-spin" /> : p.icon}
+                  </span>
+                  <span className="truncate">{p.label}</span>
                 </button>
               ))}
             </div>
@@ -333,10 +342,14 @@ function AuthPage() {
             {error && <div className="mt-5 text-sm font-semibold text-destructive">{error}</div>}
             {notice && <div className="mt-5 text-sm font-semibold text-brand-dark">{notice}</div>}
 
-            <p className="mt-6 text-xs leading-relaxed text-ink/55">
-              Temporary or disposable email addresses are not supported. Please use a valid Google, Microsoft
-              (Outlook), Apple, or personal email account.
-            </p>
+            <div className="mt-6 flex items-start gap-2 rounded-2xl border border-brand/20 bg-brand/8 px-3 py-2.5">
+              <ShieldCheck size={16} className="mt-0.5 shrink-0 text-brand-dark" />
+              <p className="text-xs leading-relaxed text-ink/70">
+                Secure sign-in over an encrypted connection. Temporary or disposable email addresses are not
+                supported, so please use a valid Google, Microsoft (Outlook), Apple or personal email account.
+              </p>
+            </div>
+
           </div>
         </section>
       </main>

@@ -10,7 +10,7 @@ import { getMyProfile, setPlan } from "@/lib/plan.functions";
 export const Route = createFileRoute("/premium")({
   head: () => ({
     meta: [
-      { title: "Premium Plan — Dedicated Engineering Capacity" },
+      { title: "Premium Plan | Dedicated Engineering Capacity" },
       {
         name: "description",
         content:
@@ -115,7 +115,7 @@ function Premium() {
             return (
               <div
                 key={p.id}
-                className={`relative p-8 md:p-10 rounded-3xl border shadow-card transition hover:shadow-elegant ${
+                className={`relative p-6 sm:p-8 md:p-10 rounded-3xl border shadow-card transition hover:shadow-elegant ${
                   p.highlight ? "bg-gradient-dark overflow-hidden" : "bg-card"
                 }`}
               >
@@ -136,7 +136,7 @@ function Premium() {
                   <p className="mt-2 text-sm text-ink/60">{p.blurb}</p>
 
                   <div className="mt-6 flex items-end gap-2">
-                    <span className="text-4xl md:text-5xl font-bold text-gradient-brand">{p.price}</span>
+                    <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-brand">{p.price}</span>
                     <span className="pb-2 text-sm text-ink/50">{p.cadence}</span>
                   </div>
 
@@ -179,9 +179,9 @@ function Premium() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {[
-            { icon: ShieldCheck, title: "Account security", text: "Encrypted sessions, strong password rules and per-account data isolation are enforced in the database." },
-            { icon: Zap, title: "No lock-in", text: "Change or cancel your plan whenever you like and keep your workspace data with you." },
-            { icon: Sparkles, title: "Research included", text: "Every Premium engagement includes applied research reviews from our engineering team." },
+            { icon: ShieldCheck, title: "Account security", text: "Encrypted sessions, strong password rules and per-account data isolation enforced in the database." },
+            { icon: Zap, title: "No lock-in", text: "Change or cancel your plan whenever you like, and your workspace data stays yours." },
+            { icon: Sparkles, title: "Research included", text: "Every Premium engagement includes applied research reviews with our engineering team." },
           ].map((c) => (
             <div key={c.title} className="p-6 rounded-2xl bg-card border shadow-card">
               <c.icon size={20} className="text-brand-dark" />
