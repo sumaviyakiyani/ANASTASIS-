@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { Menu, X, Mail, Phone, MapPin, Linkedin, Twitter, Github, Facebook, UserCircle } from "lucide-react";
-import logo from "@/assets/anastasis-logo-mark.png.asset.json";
+import defaultLogo from "@/assets/anastasis-logo-mark.png.asset.json";
 import { useSession } from "@/hooks/useSession";
 
 const nav = [
@@ -15,7 +15,7 @@ const nav = [
 ] as const;
 
 
-export function Navbar() {
+export function Navbar({ logoSrc }: { logoSrc?: string }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -39,7 +39,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
         <Link to="/" className="flex shrink-0 items-center gap-2">
-          <img src={logo.url} alt="Anastasis Technologies" className="h-9 w-auto sm:h-10" />
+          <img src={logoSrc ?? defaultLogo.url} alt="Anastasis Technologies" className="h-9 w-auto sm:h-10" />
         </Link>
 
 
@@ -134,7 +134,7 @@ function Footer() {
       <div className="absolute inset-0 bg-gradient-radial opacity-40 pointer-events-none" />
       <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 md:py-16 lg:grid-cols-4">
         <div>
-          <img src={logo.url} alt="Anastasis" className="h-12 w-auto" />
+          <img src={defaultLogo.url} alt="Anastasis" className="h-12 w-auto" />
           <p className="mt-4 text-sm text-ink/60 leading-relaxed">
             Research · Innovation · Recursion · Revival · Impact. Building tomorrow's software today.
           </p>

@@ -7,7 +7,7 @@ import { lovable } from "@/integrations/lovable/index";
 import { useSession } from "@/hooks/useSession";
 import { isDisposableEmail, TEMP_EMAIL_MESSAGE } from "@/lib/disposable-email";
 import { Navbar } from "@/components/SiteLayout";
-import logo from "@/assets/anastasis-logo-mark.png.asset.json";
+import logo from "@/assets/LOGO.png";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
@@ -169,7 +169,7 @@ function AuthPage() {
 
   return (
     <>
-      <Navbar />
+      <Navbar logoSrc={logo} />
       <main className="relative min-h-screen w-full overflow-hidden bg-background lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
         {/* Left column */}
         <section className="relative z-10 flex flex-col justify-center px-4 pb-12 pt-28 sm:px-10 lg:px-16 lg:pb-20 lg:pt-32">
@@ -179,11 +179,7 @@ function AuthPage() {
               background: "radial-gradient(circle at 75% 30%, oklch(0.85 0.16 148 / 0.22), transparent 60%)",
             }}
           />
-          <Link to="/" className="flex items-center gap-4">
-            <img src={logo.url} alt="Anastasis Technologies" className="h-14 w-auto sm:h-20" />
-          </Link>
-
-          <h1 className="mt-8 text-3xl font-extrabold leading-[1.1] tracking-tight text-ink sm:text-5xl lg:mt-14 lg:text-6xl">
+          <h1 className="mt-2 text-3xl font-extrabold leading-[1.1] tracking-tight text-ink sm:text-5xl lg:mt-4 lg:text-6xl">
             Engineering the <span className="text-brand">resurrection of tech.</span>
           </h1>
 
