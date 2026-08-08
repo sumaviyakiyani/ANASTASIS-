@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { Menu, X, Mail, Phone, MapPin, Linkedin, Twitter, Github, Facebook, UserCircle } from "lucide-react";
+import headerLogo from "@/assets/LOGO.png";
 import defaultLogo from "@/assets/anastasis-logo-mark.png.asset.json";
 import { useSession } from "@/hooks/useSession";
 
@@ -39,7 +40,11 @@ export function Navbar({ logoSrc }: { logoSrc?: string }) {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
         <Link to="/" className="flex shrink-0 items-center gap-2">
-          <img src={logoSrc ?? defaultLogo.url} alt="Anastasis Technologies" className="h-9 w-auto sm:h-10" />
+          <img
+            src={logoSrc ?? headerLogo}
+            alt=""
+            className="h-8 w-auto object-contain sm:h-9 md:h-10"
+          />
         </Link>
 
 

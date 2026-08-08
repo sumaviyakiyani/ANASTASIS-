@@ -7,7 +7,7 @@ interface WhatsAppButtonProps {
   message?: string;
 }
 
-export function WhatsAppButton({ iconOnly = false, phone = PHONE, message = MESSAGE }: WhatsAppButtonProps) {
+export function WhatsAppButton({ iconOnly = true, phone = PHONE, message = MESSAGE }: WhatsAppButtonProps) {
   const href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
   return (
@@ -17,7 +17,7 @@ export function WhatsAppButton({ iconOnly = false, phone = PHONE, message = MESS
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
       className={`fixed bottom-5 right-4 z-[60] inline-flex items-center justify-center rounded-full bg-[#25D366] text-white shadow-glow transition-transform hover:scale-105 sm:bottom-6 sm:right-6 ${
-        iconOnly ? "p-3" : "gap-2 px-4 py-3 font-semibold"
+        iconOnly ? "h-12 w-12 p-3" : "gap-2 px-4 py-3 font-semibold"
       }`}
     >
       <svg viewBox="0 0 24 24" className="h-6 w-6 shrink-0" fill="currentColor" aria-hidden>
