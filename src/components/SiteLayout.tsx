@@ -139,7 +139,7 @@ function Footer() {
   return (
     <footer className="relative mt-24 bg-gradient-dark text-ink/80 border-t border-brand/20">
       <div className="absolute inset-0 bg-gradient-radial opacity-40 pointer-events-none" />
-      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 md:py-16 lg:grid-cols-3">
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 md:py-16 lg:grid-cols-4">
         <div>
           <p className="text-sm text-ink/60 leading-relaxed">
             Research · Innovation · Recursion · Revival · Impact. Building tomorrow's software today.
