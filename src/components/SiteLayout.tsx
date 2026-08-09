@@ -139,10 +139,9 @@ function Footer() {
   return (
     <footer className="relative mt-24 bg-gradient-dark text-ink/80 border-t border-brand/20">
       <div className="absolute inset-0 bg-gradient-radial opacity-40 pointer-events-none" />
-      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 md:py-16 lg:grid-cols-4">
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 md:py-16 lg:grid-cols-3">
         <div>
-          <img src={defaultLogo.url} alt="Anastasis" className="h-12 w-auto" />
-          <p className="mt-4 text-sm text-ink/60 leading-relaxed">
+          <p className="text-sm text-ink/60 leading-relaxed">
             Research · Innovation · Recursion · Revival · Impact. Building tomorrow's software today.
           </p>
         </div>
@@ -173,11 +172,16 @@ function Footer() {
         <div>
           <h4 className="text-ink font-semibold mb-4">Follow</h4>
           <div className="flex gap-3">
-            {[Linkedin, Twitter, Github, Facebook].map((Icon, i) => (
+            {[
+              { Icon: Linkedin, bg: "bg-[#0A66C2]" },
+              { Icon: Twitter, bg: "bg-[#000000]" },
+              { Icon: Github, bg: "bg-[#181717]" },
+              { Icon: Facebook, bg: "bg-[#1877F2]" },
+            ].map(({ Icon, bg }, i) => (
               <a
                 key={i}
                 href="#"
-                className="grid place-items-center h-10 w-10 rounded-full glass-dark text-ink hover:bg-gradient-brand hover:text-white transition"
+                className={`${bg} grid place-items-center h-10 w-10 rounded-full text-white transition hover:brightness-110`}
                 aria-label="Social link"
               >
                 <Icon size={16} />
